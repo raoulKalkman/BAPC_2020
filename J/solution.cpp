@@ -14,17 +14,20 @@ int main(){
     std::cin >> corner >> edge >> center;
 
     if(corner == 0 && edge == 0 && center == 0){
-        std::cout << "0 0";
+        std::cout << "impossible" << std::endl;
+        std::cout.flush();
         exit(0);
     }
 
     if(corner != 4){
-        std::cout << "impossible";
+        std::cout << "impossible" << std::endl;
+        std::cout.flush();
         exit(0);
     }
 
     if(edge % 2 != 0){
-        std::cout << "impossible";
+        std::cout << "impossible" << std::endl;
+        std::cout.flush();
         exit(0);
     }
 
@@ -38,11 +41,13 @@ int main(){
 //        std::cout << "This should thus have " << x * y << " center pieces!\n";
 
         if(x * y == center){
-            std::cout << x*2 << " " << y*2;
+            std::cout << x+2 << " " << y+2 << std::endl;
+            std::cout.flush();
             exit(0);
         }
     }
 
-    std::cout << "impossible";
+    std::cout << "impossible" << std::endl;
+    std::cout.flush();
     exit(0);
 }
