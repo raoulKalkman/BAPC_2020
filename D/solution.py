@@ -1,6 +1,20 @@
-# Assignment: given a map of different buildings of different hights, find how many elevators makes all available
+w, h = [int(a) for a in input().split()]
 
-# Solution: make an elevator at the highest point in the map, check which tiles are reachable at each hight > 1
+points = []
+for x in range(1, w+1):
+    if len(points) == 2:
+        break
+    lim = [1, h]
+    while lim[0] <= lim[1]:
+        mid = int((lim[0] + lim[1]) / 2)
+        print('?', x, mid, flush=True)
+        res = input()
+        if res == 'sea': # too low
+            lim[0] = mid+1
+        elif res == 'sky': # too high
+            lim[1] = mid-1
+        else:
+            points.append((x, mid))
+            break
 
-h, w = [int(a) for a in input.split()]
-map = [[int(a) for a in input().split()] for i in range(h)]
+print('!', points[0][0], points[0][1], points[1][0], points[1][1], flush=True)
