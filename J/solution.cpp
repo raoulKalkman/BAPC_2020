@@ -15,14 +15,17 @@ int main(){
 
     if(corner == 0 && edge == 0 && center == 0){
         std::cout << "0 0";
+        exit(0);
     }
 
     if(corner != 4){
         std::cout << "impossible";
+        exit(0);
     }
 
     if(edge % 2 != 0){
         std::cout << "impossible";
+        exit(0);
     }
 
     //we have 4 corners and an even amount of edges
